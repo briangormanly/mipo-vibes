@@ -32,7 +32,7 @@ Should the app export category targets, respondent-level weights, or both?
 --------------------------------
 ```
 
-and recieved the following response:
+and received the following response:
 
 ```
 Let’s just do all adults for this demo
@@ -51,7 +51,7 @@ For the ui I am thinking (using a angular 20 framework) :
 
 ```
 Left panel: choose variables (Race, Gender, Age, Income, Region, Party).
-For variables with nonresponse, type a refusal %; app recomputes adjusted targets instantly.
+For variables with non-response, type a refusal %; app recomputes adjusted targets instantly.
 Paste sample counts for each category or upload a CSV with IDs and categories.
 Pick cap (default 2.0).
 Click “Compute.”

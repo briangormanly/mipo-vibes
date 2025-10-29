@@ -1,0 +1,66 @@
+{
+  "targetSetId": "acs_all_adults_national",
+  "name": "ACS All Adults National",
+  "universe": "All Adults",
+  "geography": "National",
+  "variables": [
+    {
+      "key": "RACE",
+      "label": "Race / Hispanic",
+      "categories": [
+        { "key": "NH_WHITE", "label": "Non-Hispanic White", "share": 0.62 },
+        { "key": "NH_BLACK", "label": "Non-Hispanic Black", "share": 0.12 },
+        { "key": "HISPANIC", "label": "Hispanic (any race)", "share": 0.19 },
+        { "key": "NH_OTHER", "label": "Non-Hispanic Other", "share": 0.07 }
+      ]
+    },
+    {
+      "key": "GENDER",
+      "label": "Gender",
+      "categories": [
+        { "key": "MALE", "label": "Male", "share": 0.48 },
+        { "key": "FEMALE", "label": "Female", "share": 0.52 }
+      ]
+    },
+    {
+      "key": "AGE",
+      "label": "Age",
+      "categories": [
+        { "key": "18_29", "label": "18–29", "share": 0.21 },
+        { "key": "30_44", "label": "30–44", "share": 0.24 },
+        { "key": "45_64", "label": "45–64", "share": 0.33 },
+        { "key": "65P", "label": "65+", "share": 0.22 }
+      ]
+    },
+    {
+      "key": "INCOME",
+      "label": "Household Income",
+      "categories": [
+        { "key": "UNDER_25K", "label": "< $25k", "share": 0.16 },
+        { "key": "25_49K", "label": "$25–49k", "share": 0.20 },
+        { "key": "50_99K", "label": "$50–99k", "share": 0.32 },
+        { "key": "100K_PLUS", "label": "$100k+", "share": 0.32 }
+      ]
+    },
+    {
+      "key": "REGION",
+      "label": "Census Region",
+      "categories": [
+        { "key": "NORTHEAST", "label": "Northeast", "share": 0.17 },
+        { "key": "MIDWEST", "label": "Midwest", "share": 0.21 },
+        { "key": "SOUTH", "label": "South", "share": 0.38 },
+        { "key": "WEST", "label": "West", "share": 0.24 }
+      ]
+    },
+    {
+      "key": "PARTY",
+      "label": "Party Identification",
+      "categories": [
+        { "key": "DEM", "label": "Democrat", "share": 0.33 },
+        { "key": "REP", "label": "Republican", "share": 0.30 },
+        { "key": "IND_OTHER", "label": "Independent/Other", "share": 0.37 }
+      ]
+    }
+  ]
+}
+

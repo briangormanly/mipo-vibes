@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { provideZoneChangeDetection } from '@angular/core';\nexport const APP_CONFIG = [provideZoneChangeDetection({\n  eventCoalescing: true\n})];","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
