@@ -1,0 +1,65 @@
+I have been asked by the Universities MIPO (Marist Institute of Public Opinion) to do a "vibe coding demo" to instill a sense of what is possible now and help them start thinking about new solutions they might be able to use for problems. The goal of this prompt is to create to 
+ 
+I have been given the following description of the application:
+
+```
+My "app" idea was a weighting calculator for both weighting demos and party registration. We currently use excels to calculate each, but if there was an app that had parameters in the background and we just add in the refusal number that recalculates what the weighting parameters should be, that would be cool. Also, a feature that allows us to cap at certain number so we don't more than double any one group.
+```
+
+I have included the spreadsheet that they sent for context.
+
+I sent the following email asking some clariying questions:
+
+```
+On the first pass, I think this is good. I remember you talking about this a bit in SF. If someone has a moment to doodle an imagined UI (rough wireframe, nothing fancy) that will help as well (I have some bullets at the bottom with my early thoughts). 
+
+I also feed the idea into GPT to get a feel for the depth and better flesh out some of the terms I am less familiar with, such as refusal numbers and how they tie in (I remember you telling me this is very high in the modern world), I had it generate questions I should ask to make sure I prep well, this is what it came up with. If you have a chance, answer what you can (or what is relevant, if some are not, just ignore them). Many are just data point specific.
+
+---------------------------------
+Here’s how I’m interpreting the “weighting calculator” idea. A lightweight app would preload ACS demographic targets and let us enter a refusal or blank rate for variables like Income. It would instantly recompute adjusted targets that exclude refusals. We could paste in sample counts or upload a CSV, hit compute, and get clean weights with a cap so no one group is more than doubled. For party registration, the same screen would let us choose a party distribution and either rake with demographics or apply it in a second step.
+
+A few confirmations would help me build the right demo:
+Should targets represent all adults, registered voters, or likely voters?
+For party, do you want official registration from voter files or self-reported party ID?
+National or state-specific weights, and do we need a geography toggle?
+Keep the Race/Hispanic buckets as in the ACS tab, or separate ethnicity from race?
+Do you want per-variable refusal inputs that re-normalize targets, with Income defaulting to about 13% like in your sheet?
+Include Education, and if yes which bins?
+Apply party with demographics in one raking pass, or do demographics first then party?
+Will users paste category counts or upload respondent-level files and let the app compute counts?
+Is a 2.0 max cap right, and should we set a minimum cap as well?
+Should the app export category targets, respondent-level weights, or both?
+--------------------------------
+```
+
+and recieved the following response:
+
+```
+Let’s just do all adults for this demo
+Let’s do self-identified party ID (some significant states don’t have party registration)
+National
+Same ACS buckets
+Yes
+Let’s skip education for this demo
+Demo first then party.
+Category counts
+Min .5 Max 2.0
+Both
+```
+
+For the ui I am thinking (using a angular 20 framework) :
+
+```
+Left panel: choose variables (Race, Gender, Age, Income, Region, Party).
+For variables with nonresponse, type a refusal %; app recomputes adjusted targets instantly.
+Paste sample counts for each category or upload a CSV with IDs and categories.
+Pick cap (default 2.0).
+Click “Compute.”
+Output: table of targets vs sample, weights by category, and optionally aper-respondent CSV with a weight column.
+Nice touch: red highlight when any group would exceed the cap, with a tooltip explaining the tradeoff.
+```
+I wanted to have a restful API built with typescript running on node.js that connects to a neo4j graph database. Please create a docker compose file to create a new neo4j container running neo4j:5-enterprise standard ports:
+      - "7474:7474"  # HTTP
+      - "7687:7687"  # Bolt
+	  
+Please create 2 formal specifications in markdown that I can use to agentically build out this project. One targetted at creating a full application, and the other targeted at a fast POC that can be used to evaluate the usefullness of the application. The POC may use no database or sqllite, and leave out un-needed layers (could be just a front end if it shows how the system would work).
